@@ -136,6 +136,11 @@
                                 @if (session('msg'))
                             <div class="alert alert-success">{{ session('msg') }}</div>
                         @endif
+
+                        @if (session('msg1'))
+                            <div class="alert alert-danger">{{ session('msg1') }}</div>
+                        @endif
+
                                 <h3>Request for Booking</h3>
                                 <p>Send your requirement to us. We will check email and contact you soon.</p>
                             </div>

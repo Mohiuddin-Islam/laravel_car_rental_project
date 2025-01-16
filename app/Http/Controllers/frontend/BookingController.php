@@ -34,35 +34,46 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
             'carlist' => 'required',
             'driver' => 'required',
-            'pick_up_date' => 'required',
-            'drop_off_date' => 'required',
+            'pick_up_date' => 'required|date',
+            'drop_off_date' => 'required|date|after_or_equal:pick_up_date',
         ]);
 
+        $carId = $request->carlist;
+        $pickUpDate = Carbon::parse($request->pick_up_date);
+        $dropOffDate = Carbon::parse($request->drop_off_date);
 
-    $id = $request->carlist;
-    $carlist = CarList::find($id);
-    $price = $carlist->price_per_day;
+        $conflictingBookings = Booking::where('car_list_id', $carId)
+                    ->where(function($query) use ($pickUpDate, $dropOffDate) {
+                    $query->whereBetween('pick_up_date', [$pickUpDate, $dropOffDate])
+                    ->orWhereBetween('drop_off_date', [$pickUpDate, $dropOffDate])
+                    ->orWhere(function($query) use ($pickUpDate, $dropOffDate) {
+                    $query->where('pick_up_date', '<=', $pickUpDate)
+                    ->where('drop_off_date', '>=', $dropOffDate);
+            });
+            })
+            ->exists();
 
-    $pick_up_date = $request->pick_up_date;
-    $drop_off_date = $request->drop_off_date;
+        if ($conflictingBookings) {
+            return redirect()->back()->with('msg1', 'The selected car is already booked for the chosen dates.');
+        }
 
-    $pick_up = Carbon::parse($pick_up_date); 
-    $drop_off = Carbon::parse($drop_off_date); 
-    $days = $pick_up->diffInDays($drop_off);
-    
+        $carlist = CarList::find($carId);
+        $price = $carlist->price_per_day;
 
-        $app = new Booking();
-        $app->customer_id = Auth::user()->id;
-        $app->pick_up_date = $request->pick_up_date;
-        $app->drop_off_date = $request->drop_off_date;
-        $app->car_list_id = $request->carlist;
-        $app->driver_id = $request->driver; // corrected 'car_lists' to 'carlist'
-        $app->amount = $price * $days;
+        $days = $pickUpDate->diffInDays($dropOffDate);
+        $amount = $price * $days;
 
-        $app->save();
+        Booking::create([
+            'customer_id' => Auth::user()->id,
+            'car_list_id' => $carId,
+            'driver_id' => $request->driver,
+            'pick_up_date' => $pickUpDate,
+            'drop_off_date' => $dropOffDate,
+            'amount' => $amount,
+            'status' => 'pending',
+        ]);
 
         return redirect()->back()->with('msg', 'Successfully Booking Done');
     }
