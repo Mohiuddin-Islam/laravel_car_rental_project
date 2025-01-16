@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Documentation For Remons - Booking Rental HTML Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/jquery.highlight.css" />
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/scrollbar.css" rel="stylesheet">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+    <!--Page Wrapper-->
+    <div class="page-wrapper">
+
+        <!--Sidebar-->
+        <aside id="sidebar">
+
+            <!--Toggle Button-->
+            <div class="button-container clearfix">
+                <div class="menu-toggle flaticon-menu10"></div>
+            </div>
+
+            <!--Menu Box-->
+            <div class="menu-box">
+                <!--Logo-->
+                <br>
+                <div class="logo text-right"><a href="#"><img src="images/logo/white-logo.svg" width="119" alt=""></a></div>
+
+                <!--Sticky Menu-->
+                <nav class="sticky-menu">
+                    <ul>
+                        <li class="current"><a href="#introduction">Introduction <span
+                                    class="fa fa-arrow-right"></span></a></li>
+                        <li><a href="#html-structure">HTML Structure <span class="fa fa-arrow-right"></span></a></li>
+                        <li><a href="#css-structure">CSS Files and Structure <span class="fa fa-arrow-right"></span></a>
+                        </li>
+                        <li><a href="#javascript">Javascript <span class="fa fa-arrow-right"></span></a></li>
+                        <li><a href="#contact-form">Contact Form Settings<span class="fa fa-arrow-right"></span></a>
+                        </li>
+                        <li><a href="#mailchimp-settings">MailChimp Settings<span class="fa fa-arrow-right"></span></a>
+                        </li>
+                        <li><a href="#tutorial">Tutorial<span class="fa fa-arrow-right"></span></a></li>
+                        <li><a href="#sources-credits">Sources and Credits <span class="fa fa-arrow-right"></span></a>
+                        </li>
+                        <li><a href="#support">Support <span class="fa fa-arrow-right"></span></a></li>
+                    </ul>
+
+                </nav>
+
+            </div>
+
+            <div class="copyright">Copyright &copy; <a href="mailto:pixydrops@gmail.com">pixydrops</a> 2024</div>
+        </aside>
+
+        <div id="content-section">
+
+            <!--Introduction Section-->
+            <section class="section introduction" id="introduction">
+                <!-- <div class="sec-title">
+            	<span class="icon fa fa-windows"></span>
+                <h2>Intoduction</h2>
+            </div> -->
+
+                <br>
+                <div class="sec-content">
+                    <h2>Remons </h2>
+                    <h3> Remons - Booking Rental HTML Template</h3>
+
+                    <div class="separator"></div>
+
+                    <strong>Created :</strong> 04/27/2024<br>
+                    <strong>By :</strong> pixydrops<br>
+                    <strong>Email :</strong> <a href="mailto:pixydrops@gmail.com ">pixydrops@gmail.com </a> <br>
+
+                    <br>
+                    <p>Thank you for purchasing <strong>Remons</strong> -  Remons - Booking Rental HTML Template
+                        Template. If
+                        you have
+                        any questions that are beyond the scope of this help file, please feel free to email, via my
+                        user page contact form or put a ticket at Support Center .<br>Thankyou so much!</p>
+                    <br />
+
+                    <h3 class="content-title">Template Features</h3>
+                    <br />
+                    <ul class="checkbox">
+                        <li>Clean & Simple Design</li>
+                        <li>Advance Bootstrap 5 Framework </li>
+                        <li>HTML5 & CSS3 </li>
+                        <li>CSS3 Animations </li>
+                        <li>Fully Responsive Design </li>
+                        <li>All files are well commented </li>
+                        <li>Crossbrowser Compatible with IE10+, Firefox, Safari, Opera, Chrome </li>
+                        <li>Extensive Documentation</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!--HTML Structure-->
+            <section class="section html-structure" id="html-structure">
+                <div class="sec-title">
+                    <span class="icon fa fa-th-large"></span>
+                    <h2>HTML Structure</h2>
+                </div>
+
+                <br>
+                <div class="sec-content">
+
+                    <h3>The html template uses Latest <strong>Bootstrap v5.x</strong> with valid HTML5 tags. This
+                        theme is a responisve layout with 4 column Support column. All of the information in content
+                        area is nested within a class and comes with predefined classes.</h3>
+
+                    <h3 class="content-title">Basic Grid HTML</h3>
+                    <p>For a simple two column layout, create a .container and add the appropriate number of .col-md*
+                        columns. </p>
+                    <p>Given this example, we have .col-md-4 and .col-md-8, making for 12 total columns and a complete
+                        row.</p>
+                    <br />
+                    <pre class="code" data-language="html">
+<div class="thm-container">
+    <div class="col-md-4">...</div>
+    <div class="col-md-8">...</div>
+</div>
+                </pre>
+                    <br />
+                    <h3 class="content-title">Nesting Columns</h3><!-- /.content-title -->
+                    <p>To nest your content with the default grid, add a new .container and set of .col-md* columns
+                        within an existing .col-md* column. Nested rows should include a set of columns that add up to
+                        the number of columns of its parent.</p>
+                    <br />
+                    <pre class="code" data-language="html">
+<div class="thm-container">
+    <div class="col-md-9">
+        Level 1 column
+        <div class="row">
+            <div class="col-md-8">Level 2</div>
+            <div class="col-md-4">Level 2</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        Level 2 column
+    </div>
+</div>
+</pre><!-- /.code -->
+                </div>
+
+            </section>
+
+            <!--CSS Structure-->
+            <section class="section css-structure" id="css-structure">
+                <div class="sec-title">
+                    <span class="icon fa fa-at"></span>
+                    <h2>CSS Files and Structure</h2>
+                </div>
+
+                <br>
+                <div class="sec-content">
+
+                    <h3>Mainly three main CSS files are used in this theme. The first one
+                        <strong>bootstrap.css</strong>, second one is <strong>style.css</strong> which for this template
+                        and third one is <strong>responsive.css</strong> to control responsive layouts.
+                    </h3>
+                    <p>If you would like to edit a specific section of the site, simply find the appropriate label in
+                        the CSS file, and then scroll down until you find the appropriate style that needs to be edited.
+                    </p>
+                    <br />
+                    <p>These are the css files that are loaded into templates in top of style.css file labled as
+                        <b>imported css</b>.
+                    </p>
+                    <br />
+                    <pre class="code" data-language="css">
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/ajax-mail.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery.meanmenu.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.waypoints.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/viewport.jquery.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/main.js"></script>
+                </pre><!-- /.code -->
+
+                    <br />
+                    <h3 class="content-title">Fonts</h3>
+
+                    <p>By default, the template loads this font from Google Web Font Services, you can change the font
+                        with the one that suits you best.</p>
+                    <br />
+                    <pre class="code" data-language="css">
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Lexend:wght@100..900&family=Pangolin&display=swap');
+                </pre><!-- /.code -->
+                </div>
+
+            </section>
+
+            <!--Javascript-->
+            <section class="section javascript" id="javascript">
+                <div class="sec-title">
+                    <span class="icon fa fa-code"></span>
+                    <h2>Jquery and javascript</h2>
+                </div>
+
+                <br>
+                <div class="sec-content">
+
+                    <h3>This theme imports three types of Javascript files.</h3>
+                    <ul>
+                        <li>jQuery</li>
+                        <li>Custom scripts <strong>(custom.js)</strong></li>
+                        <li>Some plugins</li>
+                        <br>
+                        <li><strong>jQuery</strong> is a Javascript library that greatly reduces the amount of code that
+                            you must write.</li>
+                        <li>Most of the animation in this site is carried out from the customs scripts. There are a few
+                            functions worth looking over.</li>
+                    </ul>
+                    <br>
+                    <p>In addition to the custom scripts, I have implemented few "tried and true" plugins to create the
+                        effects. This plugin is packed, so you won't need to manually edit anything in the file. The
+                        only necessary thing to know is how to call the method</p>
+                    <br />
+                    <br />
+                    <p>These are the JS files that are loaded into templates in end of the Body Section.</p>
+                    <br />
+                    <pre class="code" data-language="html">
+ <!--<< All JS Plugins >>-->
+ <script src="assets/js/jquery-3.7.1.min.js"></script>
+ <!--<< Viewport Js >>-->
+ <script src="assets/js/viewport.jquery.js"></script>
+ <!--<< Bootstrap Js >>-->
+ <script src="assets/js/bootstrap.bundle.min.js"></script>
+ <!--<< Nice Select Js >>-->
+ <script src="assets/js/jquery.nice-select.min.js"></script>
+ <!--<< Waypoints Js >>-->
+ <script src="assets/js/jquery.waypoints.js"></script>
+ <!--<< Counterup Js >>-->
+ <script src="assets/js/jquery.counterup.min.js"></script>
+ <!--<< Swiper Slider Js >>-->
+ <script src="assets/js/swiper-bundle.min.js"></script>
+ <!--<< MeanMenu Js >>-->
+ <script src="assets/js/jquery.meanmenu.min.js"></script>
+ <!--<< Magnific Popup Js >>-->
+ <script src="assets/js/jquery.magnific-popup.min.js"></script>
+ <!--<< GSAP Animation Js >>-->
+ <script src="assets/js/animation.js"></script>
+ <!--<< Wow Animation Js >>-->
+ <script src="assets/js/wow.min.js"></script>
+ <!--<< Main.js >>-->
+ <script src="assets/js/main.js"></script>
+                </pre><!-- /.code -->
+
+                </div>
+
+            </section>
+
+
+
+            </section>
+
+            <!--Contact Form Settings-->
+            <section class="section contact-form" id="contact-form">
+                <div class="sec-title">
+                    <span class="icon fa fa-th-list"></span>
+                    <h2>Contact Form Settings</h2>
+                </div>
+
+                <br>
+                <div class="sec-content">
+                    <h3>We have added an attractive and fully functional contact form. You need to update the recipient
+                        name and email address.</h3>
+                    <p>You can change recipient name and email address in <strong>sendemail.php</strong> You can locate
+                        this file in inc folder</p>
+
+                    <figure class="image-box"><img src="images/mail-settings.jpg" alt=""></figure>
+
+                </div>
+
+            </section>
+
+            <!--Sources and Credits-->
+            <section class="section tutorial" id="tutorial">
+                <div class="sec-title">
+                    <span class="icon fa fa-credit-card"></span>
+                    <h2>Tutorial</h2>
+                </div>
+
+                <br>
+                <div class="sec-content">
+                    <h3 class="content-title">LOGO</h3><!-- /.content-title -->
+                    <br />
+                    <p>Lets start updating the template. Open index.html file and follow the steps.</p>
+                    <p>Most of the updates are same for all pages. So will explain once here.</p>
+                    <br />
+                    <pre class="code" data-language="html">
+<div class="logo">
+    <a href="index.html" class="header-logo">
+        <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+    </a>
+</div>
+                </pre><!-- /.code -->
+
+                    <p>Replace "images/logo.png" with your logo image url source or website name .</p>
+                    <br />
+
+                    <h3 class="content-title">NAVMENU</h3><!-- /.content-title -->
+                    <br />
+                    <p>This is the basic structure.</p>
+
+                    <pre class="code" data-language="html">
+<!-- Collect the nav links, forms, and other content for toggling -->
+<nav id="mobile-menu">
+    <ul>
+        <li class="has-dropdown active menu-thumb">
+            <a href="index.html">
+            Home 
+            <i class="fas fa-angle-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="index.html">Home 01</a></li>
+                <li><a href="index-2.html">Home 02</a></li>
+                <li><a href="index-3.html">Home 03</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="about.html">About Us</a>
+        </li>
+        <li class="has-dropdown">
+            <a href="news.html">
+                Pages
+                <i class="fas fa-angle-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faq.html">Faq's</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="program-details.html">
+                Cars
+                <i class="fas fa-angle-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="car-grid.html">Car Grid</a></li>
+                <li><a href="car-list.html">Car List</a></li>
+                <li><a href="car-list-sidebar.html">Car Sidebar</a></li>
+                <li><a href="car-details.html">Car Details</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="news.html">
+                Blog
+                <i class="fas fa-angle-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="news.html">Blog</a></li>
+                <li><a href="news-details.html">Blog Details</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+</nav><!-- /.navbar-collapse --></pre><!-- /.code -->
+
+                    <br />
+                    <p>Add your own menu item to that ul li item. and if you want to add dropdown menu just make a
+                        nesting ul li with class of <b>sub-menu</b></p>
+
+                    <br />
+                    <br />
+                    <h3 class="content-title">FOOTER COPYRIGHT</h3><!-- /.content-title -->
+                    <br />
+                    <pre class="code" data-language="html">
+<div class="footer-bottom">
+    <div class="footer-wrapper">
+        <p>
+            © Copyright 2024 by <a href="index.html">Remons.com</a>
+        </p>
+    </div>
+</div><!-- /.footer-bottom -->
+
+                </pre><!-- /.code -->
+                    <p>replace "© Copyright Remons2024 . All right reserved." with the copyright info.</p>
+                </div>
+
+            </section>
+
+            <!--Sources and Credits-->
+            <section class="section sources-credits" id="sources-credits">
+                <div class="sec-title">
+                    <span class="icon fa fa-credit-card"></span>
+                    <h2>Sources and Credits</h2>
+                </div>
+
+                <br>
+                <div class="sec-content">
+
+                    <h3>Fonts Used int the template are google fonts, you can find theme on Google Fonts API</h3>
+
+                    <p><strong> Fonts Used are :</strong></p>
+                    <p><a href="https://fonts.google.com/specimen/Barlow">Barlow</a></p>
+                    <p><a href="https://fonts.google.com/specimen/Sacramento">Sacramento</a></p>
+
+                    <br>
+
+                    <p><strong> File Used For Animation Effects :</strong></p>
+                    <p><strong><a href="http://ianlunn.github.io/Hover/" target="_blank">hover.css</a></strong> (in css
+                        Folder)</p>
+                    <p><strong><a href="http://daneden.me/animate" target="_blank">animate.css</a></strong> (in css
+                        Folder)</p>
+
+                    <br>
+
+                    <p><strong> Sliders Used Are :</strong></p>
+                    <p><a href="http://www.owlcarousel.owlgraphic.com/docs/started-welcome.html" target="_blank">Owl
+                            Carousel</a></p>
+
+                    <br>
+
+                    <p><strong> Plugins Used Are :</strong></p>
+
+                    <p><a href="http://dimsemenov.com/plugins/magnific-popup/documentation.html"
+                            target="_blank">Magnific Popup</a> (can be located in js folder)</p>
+                    <p><a href="https://github.com/jzaefferer/jquery-validation" target="_blank">jQuery Validation</a>
+                        (can be located in js folder)</p>
+                    <p><a href="http://kottenator.github.io/jquery-circle-progress/" target="_blank">jQuery Circle
+                            Pogress</a> (can be located in js folder)</p>
+                    <p><a href="http://silviomoreto.github.io/bootstrap-select" target="_blank">Bootstrap Select</a>
+                        (can be located in js folder)</p>
+                    <p><a href="http://isotope.metafizzy.co" target="_blank">isotope</a> (can be located in js folder)
+                    </p>
+                    <p><a href="https://hpneo.github.io/gmaps/" target="_blank">Gmap.js</a> (can be located in js
+                        folder)</p>
+                    <p><a href="https://fontawesome.com/" target="_blank">FontAwesome Icons</a> (can be located in
+                        plugins folder)</p>
+                    <p><a href="http://icofont.com/" target="_blank">Icofont Icons</a> (can be located in plugins
+                        folder)</p>
+
+                    Every Code is properly commented for Editing Ease.
+
+                </div>
+
+            </section>
+
+            <!--Support-->
+            <section class="section support" id="support">
+                <div class="sec-title">
+                    <span class="icon fa fa-support"></span>
+                    <h2>Support</h2>
+                </div>
+
+                <br>
+                <div class="sec-content">
+
+                    <h3>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad
+                        to help you if you have any questions relating to this theme. No guarantees, but I'll do my best
+                        to assist. If you have any queries, please feel free to contact us at Support Center.</h3>
+
+                    <p>Email Us at : <a href="mailto: pixydrops@gmail.com "> pixydrops@gmail.com </a> </p>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </div>
+    <!--End pagewrapper-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/scrollbar.js"></script>
+    <script src="js/prism.js"></script>
+
+    <script src="js/jquery.highlight.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

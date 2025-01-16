@@ -1,0 +1,79 @@
+<?php
+
+namespace App\Http\Controllers\backend;
+
+use App\Http\Controllers\Controller;
+use App\Models\Customer;
+use Illuminate\Http\Request;
+
+class CustomerController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $items = Customer::orderBy('id', 'desc')->get();
+        return view('backend.customer.index', compact('items'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('backend.customer.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $password = $request->password;
+        $password = bcrypt('password');
+        $customer = new Customer();
+
+        $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->password = $password;
+        $customer->phone = $request->phone;
+        
+        $customer->save();
+        return redirect()->route('customer.index')->with('msg', "Customer Add Successfully");
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Customer $customer)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Customer $customer)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Customer $customer)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Customer $customer)
+    {
+        $customer->delete();
+
+        return redirect()->route('customer.index')->with('msg', 'Customer Deleted Successfully');
+    }
+}
